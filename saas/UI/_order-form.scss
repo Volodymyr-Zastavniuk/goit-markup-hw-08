@@ -1,0 +1,138 @@
+.order-form {
+  &__title {
+    margin-bottom: 12px;
+  }
+
+  &__field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 10px;
+  }
+
+  &__field-textarea {
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: 0.01em;
+    margin-bottom: 4px;
+  }
+
+  &__input {
+    height: 40px;
+    padding: 0 0 0 42px;
+
+    font-size: 14px;
+    letter-spacing: 0.01em;
+
+    border: 1px solid var(--modal-input-border);
+    border-radius: 4px;
+    color: var(--title-text-color);
+    transition: border-color var(--transition-duration-function);
+
+    &:focus,
+    &:hover {
+      outline: none;
+      border-color: var(--accent-color);
+    }
+  }
+
+  &__input-icon {
+    position: absolute;
+    left: 12px;
+    bottom: 11px;
+    @include w-h(18, 18);
+
+    transition: fill var(--transition-duration-function);
+
+    .order-form__input:focus + &,
+    .order-form__input:hover + &,
+    .order-form__input:not(:placeholder-shown) + & {
+      fill: var(--accent-color);
+    }
+  }
+
+  &__textarea {
+    padding: 12px 16px;
+    height: 120px;
+    resize: none;
+
+    font-size: 14px;
+    letter-spacing: 0.01em;
+
+    border: 1px solid var(--modal-input-border);
+    border-radius: 4px;
+    color: var(--title-text-color);
+
+    transition: border-color var(--transition-duration-function);
+
+    &::placeholder {
+      color: var(--modal-placeholder-color);
+    }
+
+    &:focus,
+    &:hover {
+      outline: none;
+      border-color: var(--accent-color);
+    }
+  }
+
+  &__checkbox-field {
+    position: relative;
+    display: block;
+    padding-left: 36px;
+    margin-bottom: 30px;
+    line-height: 1.71;
+  }
+
+  &__checkbox-label {
+    display: inline-block;
+    margin: 0;
+  }
+
+  &__checkbox {
+    top: calc(50% + 7px);
+    left: 21px;
+  }
+
+  &__checkbox-icon {
+    position: absolute;
+    top: 50%;
+    left: 12px;
+    transform: translateY(-50%);
+    transition: opacity var(--transition-duration-function);
+  }
+
+  &__checkbox-icon-unchecked {
+    opacity: 1;
+
+    .order-form__checkbox:focus-visible ~ & {
+      outline-offset: 2px;
+      outline: 2px solid var(--black-text-color);
+      border-radius: 1px;
+    }
+  }
+
+  &__checkbox-icon-checked {
+    opacity: 0;
+
+    .order-form__checkbox:checked ~ & {
+      opacity: 1;
+    }
+  }
+
+  &__checkbox-link {
+    display: inline-block;
+    margin: 0;
+    line-height: inherit;
+    color: var(--accent-color);
+  }
+
+  &__submit-button {
+    display: block;
+    margin: 0 auto;
+  }
+}

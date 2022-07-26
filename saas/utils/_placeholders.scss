@@ -1,0 +1,24 @@
+%center-flex-items {
+  display: flex;
+  align-items: center;
+}
+
+%center-flex-content {
+  display: flex;
+  justify-content: center;
+}
+
+%center-flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+%transition-color-bgc {
+  transition: color var(--transition-duration-function),
+    background-color var(--transition-duration-function);
+}
+
+%transition-bgc {
+  transition: background-color var(--transition-duration-function);
+}

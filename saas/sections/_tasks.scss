@@ -1,0 +1,29 @@
+.tasks {
+  padding-top: 0px;
+
+  &__title {
+    margin-bottom: 50px;
+  }
+
+  &__list {
+    display: flex;
+
+    & > li:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+
+  &__item {
+    position: relative;
+  }
+
+  &__content {
+    @extend %center-flex;
+    position: absolute;
+    bottom: 0;
+    margin: 0;
+    width: 100%;
+    height: 70px;
+    background-color: var(--bg-third-color);
+  }
+}

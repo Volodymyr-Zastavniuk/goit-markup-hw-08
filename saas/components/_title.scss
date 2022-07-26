@@ -1,0 +1,25 @@
+.title {
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 1.16;
+  text-align: center;
+  color: var(--title-text-color);
+
+  &--middle {
+    font-size: 20px;
+    line-height: 1.15;
+  }
+
+  &--small {
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+  }
+
+  &--small-white {
+    color: var(--white-text-color);
+    font-size: 14px;
+    line-height: 1.14;
+    text-transform: uppercase;
+  }
+}
