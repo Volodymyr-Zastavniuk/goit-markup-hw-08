@@ -1,0 +1,36 @@
+.mobile-button {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+
+  z-index: 900;
+
+  @include for-tablet-up {
+    & {
+      display: none;
+    }
+  }
+
+  &__icon {
+    fill: var(--title-text-color);
+    &:hover,
+    &:focus {
+      fill: var(--accent-color);
+    }
+  }
+
+  &__icon-open {
+    .mobile-button.is-open & {
+      display: none;
+    }
+  }
+
+  &__icon-close {
+    display: none;
+
+    .mobile-button.is-open & {
+      display: block;
+    }
+  }
+}

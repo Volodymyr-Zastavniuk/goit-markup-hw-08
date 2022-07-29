@@ -8,7 +8,14 @@
 
   &__list {
     display: flex;
-    line-height: 1.71;
+    flex-wrap: wrap;
+    gap: 30px;
+
+    @include for-tablet-up {
+    }
+    @include for-desktop-up {
+      // line-height: 1.71;
+    }
   }
 
   &__text {
@@ -16,20 +23,26 @@
   }
 
   &__item {
-    max-width: 270px;
-  }
-
-  &__item:not(:last-child) {
-    margin-right: 30px;
+    @include for-desktop-up {
+      max-width: 270px;
+      &:not(:last-child) {
+        margin-right: 30px;
+      }
+    }
   }
 
   &__thumb {
-    @extend %center-flex;
-    @include w-h(270, 120);
+    display: flex;
+    align-items: center;
+    justify-content: center;
     margin-bottom: 30px;
-
-    background-color: var(--bg-secondary-color);
+    height: 120px;
     border-radius: 4px;
+    background-color: var(--bg-secondary-color);
+
+    @include for-desktop-up {
+      width: 270px;
+    }
   }
 
   &__icon {

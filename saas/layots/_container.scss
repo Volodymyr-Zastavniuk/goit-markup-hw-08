@@ -1,6 +1,17 @@
 .container {
-  max-width: 1200px;
+  max-width: 480px;
   padding: 0 15px;
   margin-left: auto;
   margin-right: auto;
+
+  @include for-tablet-up {
+    & {
+      width: 768px;
+    }
+  }
+  @include for-desktop-up {
+    & {
+      width: 1200px;
+    }
+  }
 }

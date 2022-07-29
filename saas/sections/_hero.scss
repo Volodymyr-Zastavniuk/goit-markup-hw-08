@@ -12,14 +12,20 @@
   background-size: cover;
 
   &__title {
-    max-width: 696px;
     margin: 0 auto 30px;
+    max-width: 360px;
 
+    font-size: 26px;
+    line-height: 1.62;
     font-weight: 900;
-    font-size: 44px;
-    line-height: 1.36;
     letter-spacing: 0.06em;
     text-transform: uppercase;
     color: var(--white-text-color);
+
+    @include for-desktop-up {
+      max-width: 696px;
+      font-size: 44px;
+      line-height: 1.36;
+    }
   }
 }
