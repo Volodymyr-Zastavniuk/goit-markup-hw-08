@@ -1,5 +1,11 @@
 .filter {
-  @extend %center-flex-content;
+  display: flex;
+  flex-wrap: wrap;
+  row-gap: 15px;
+
+  @include for-tablet-up {
+    justify-content: center;
+  }
 
   & > li:not(:last-child) {
     margin-right: 8px;

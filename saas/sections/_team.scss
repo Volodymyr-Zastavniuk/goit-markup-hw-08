@@ -7,11 +7,20 @@
   background-color: var(--bg-secondary-color);
 
   &__title {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+
+    @include for-desktop-up {
+      margin-bottom: 50px;
+    }
   }
 
   &__list {
-    @extend %center-flex-content;
+    @include for-tablet-up {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 30px;
+    }
   }
 
   &__card {
@@ -21,8 +30,12 @@
       0px 2px 1px rgba(0, 0, 0, 0.2);
     border-radius: 0px 0px 4px 4px;
 
-    &:not(:last-of-type) {
-      margin-right: 30px;
+    @include for-phone-only {
+      margin: 0 auto;
+
+      &:not(:last-of-type) {
+        margin-bottom: 30px;
+      }
     }
   }
 

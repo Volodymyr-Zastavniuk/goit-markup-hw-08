@@ -1,6 +1,10 @@
 .order-form {
   &__title {
     margin-bottom: 12px;
+    line-height: 1.5;
+
+    @include for-desktop-up {
+    }
   }
 
   &__field {
@@ -25,8 +29,12 @@
     height: 40px;
     padding: 0 0 0 42px;
 
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0.01em;
+
+    @include for-desktop-up {
+      font-size: 14px;
+    }
 
     border: 1px solid var(--modal-input-border);
     border-radius: 4px;
@@ -60,8 +68,12 @@
     height: 120px;
     resize: none;
 
-    font-size: 14px;
+    font-size: 16px;
     letter-spacing: 0.01em;
+
+    @include for-desktop-up {
+      font-size: 14px;
+    }
 
     border: 1px solid var(--modal-input-border);
     border-radius: 4px;
@@ -83,14 +95,25 @@
   &__checkbox-field {
     position: relative;
     display: block;
-    padding-left: 36px;
     margin-bottom: 30px;
-    line-height: 1.71;
+    padding-left: 24px;
+
+    @include for-desktop-up {
+      padding-left: 36px;
+    }
   }
 
   &__checkbox-label {
     display: inline-block;
     margin: 0;
+
+    font-size: 12px;
+    line-height: 1.16;
+
+    @include for-desktop-up {
+      font-size: 14px;
+      line-height: 1.71;
+    }
   }
 
   &__checkbox {
@@ -101,9 +124,13 @@
   &__checkbox-icon {
     position: absolute;
     top: 50%;
-    left: 12px;
+    left: 0px;
     transform: translateY(-50%);
     transition: opacity var(--transition-duration-function);
+
+    @include for-desktop-up {
+      left: 12px;
+    }
   }
 
   &__checkbox-icon-unchecked {
@@ -127,7 +154,9 @@
   &__checkbox-link {
     display: inline-block;
     margin: 0;
+    font-size: inherit;
     line-height: inherit;
+
     color: var(--accent-color);
   }
 

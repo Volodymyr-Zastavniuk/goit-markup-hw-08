@@ -7,14 +7,13 @@
   }
 
   &__list {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 30px;
+    line-height: 1.71;
 
     @include for-tablet-up {
-    }
-    @include for-desktop-up {
-      // line-height: 1.71;
+      margin: -15px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
     }
   }
 
@@ -23,11 +22,19 @@
   }
 
   &__item {
-    @include for-desktop-up {
-      max-width: 270px;
-      &:not(:last-child) {
-        margin-right: 30px;
+    @include for-phone-only {
+      &:not(:last-of-type) {
+        margin-bottom: 30px;
       }
+    }
+
+    @include for-tablet-up {
+      margin: 15px;
+      flex-basis: calc(100% / 2 - 30px);
+    }
+
+    @include for-desktop-up {
+      flex-basis: calc(100% / 4 - 30px);
     }
   }
 
@@ -39,16 +46,10 @@
     height: 120px;
     border-radius: 4px;
     background-color: var(--bg-secondary-color);
-
-    @include for-desktop-up {
-      width: 270px;
-    }
   }
 
   &__icon {
-    @include w-h(70, 70);
-
-    // width: 70px;
-    // height: 70px;
+    width: 70px;
+    height: 70px;
   }
 }

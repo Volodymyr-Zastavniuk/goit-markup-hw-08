@@ -1,19 +1,43 @@
 .customer {
   &__title {
-    margin-bottom: 50px;
+    margin-bottom: 30px;
+
+    @include for-desktop-up {
+      margin-bottom: 50px;
+    }
   }
 
   &__list {
-    @extend %center-flex-items;
-    justify-content: space-between;
+    margin: -15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+
     text-decoration: none;
     font-style: normal;
     color: inherit;
   }
 
+  &__item {
+    margin: 15px;
+    flex-basis: calc(100% / 2 - 30px);
+
+    @include for-tablet-up {
+      flex-basis: calc(100% / 3 - 30px);
+    }
+
+    @include for-desktop-up {
+      flex-basis: calc(100% / 6 - 30px);
+    }
+  }
+
   &__link {
-    @extend %center-flex;
-    @include w-h(170, 92);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // width: 170px;
+    height: 92px;
 
     text-decoration: none;
     font-style: normal;
@@ -31,7 +55,8 @@
   }
 
   &__icon {
-    @include w-h(106, 60);
+    width: 106px;
+    height: 60px;
     fill: currentColor;
   }
 }

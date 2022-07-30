@@ -3,13 +3,32 @@
   background-color: var(--bg-hero-footer-color);
 
   &__inner {
-    display: flex;
-    align-items: baseline;
-    gap: 70px;
+    @include for-phone-and-tablet-only {
+      text-align: center;
+    }
+
+    @include for-tablet-only {
+      padding: 0 80px;
+    }
+
+    @include for-tablet-up {
+      display: flex;
+      gap: 60px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    @include for-desktop-up {
+      align-items: baseline;
+      gap: 70px;
+    }
   }
 
   &__adress-group {
-    width: 231px;
+    @include for-phone-only {
+      margin-bottom: 60px;
+    }
+    // width: 231px;
   }
 
   &__logo {
@@ -38,11 +57,23 @@
     line-height: 1.71;
   }
 
-  &__subscribe-group {
-    margin-left: auto;
+  &__social-group {
+    @include for-phone-only {
+      margin-bottom: 60px;
+    }
+
+    @include for-tablet-only {
+      margin-left: auto;
+    }
   }
   &__social-title {
     display: inline-block;
     margin-bottom: 20px;
+  }
+
+  &__subscribe-group {
+    @include for-desktop-up {
+      margin-left: auto;
+    }
   }
 }

@@ -7,7 +7,11 @@
 
   &--middle {
     font-size: 20px;
-    line-height: 1.15;
+    line-height: 1.5;
+
+    @include for-desktop-up {
+      line-height: 1.15;
+    }
   }
 
   &--small {
