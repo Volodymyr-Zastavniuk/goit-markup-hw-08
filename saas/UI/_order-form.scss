@@ -52,7 +52,8 @@
     position: absolute;
     left: 12px;
     bottom: 11px;
-    @include w-h(18, 18);
+    width: 18px;
+    height: 18px;
 
     transition: fill var(--transition-duration-function);
 

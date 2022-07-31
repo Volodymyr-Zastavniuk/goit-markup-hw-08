@@ -10,10 +10,10 @@
     line-height: 1.71;
 
     @include for-tablet-up {
-      margin: -15px;
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
+      gap: 30px;
     }
   }
 
@@ -29,12 +29,11 @@
     }
 
     @include for-tablet-up {
-      margin: 15px;
-      flex-basis: calc(100% / 2 - 30px);
+      flex-basis: calc((100% - 1 * 30px) / 2);
     }
 
     @include for-desktop-up {
-      flex-basis: calc(100% / 4 - 30px);
+      flex-basis: calc((100% - 3 * 30px) / 4);
     }
   }
 

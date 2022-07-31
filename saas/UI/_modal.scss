@@ -53,11 +53,14 @@
   }
 
   &__close-button {
-    @extend %center-flex;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: absolute;
     top: 8px;
     right: 8px;
-    @include w-h(30, 30);
+    width: 30px;
+    height: 30px;
     border-radius: 50%;
     padding: 0;
 
@@ -74,7 +77,8 @@
   }
 
   &__icon-close {
-    @include w-h(18, 18);
+    width: 18px;
+    height: 18px;
     fill: currentColor;
   }
 }

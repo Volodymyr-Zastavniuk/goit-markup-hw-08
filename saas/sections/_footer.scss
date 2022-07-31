@@ -3,6 +3,11 @@
   background-color: var(--bg-hero-footer-color);
 
   &__inner {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 60px;
+
     @include for-phone-and-tablet-only {
       text-align: center;
     }
@@ -11,25 +16,15 @@
       padding: 0 80px;
     }
 
-    @include for-tablet-up {
-      display: flex;
-      gap: 60px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
     @include for-desktop-up {
       align-items: baseline;
       gap: 70px;
     }
   }
 
-  &__adress-group {
-    @include for-phone-only {
-      margin-bottom: 60px;
-    }
-    // width: 231px;
-  }
+  // &__adress-group {
+  //  width: 231px;
+  // }
 
   &__logo {
     display: block;
@@ -58,9 +53,9 @@
   }
 
   &__social-group {
-    @include for-phone-only {
-      margin-bottom: 60px;
-    }
+    // @include for-phone-only {
+    //   margin-bottom: 60px;
+    // }
 
     @include for-tablet-only {
       margin-left: auto;
@@ -72,6 +67,10 @@
   }
 
   &__subscribe-group {
+    @include for-phone-only {
+      flex-grow: 1;
+    }
+
     @include for-desktop-up {
       margin-left: auto;
     }

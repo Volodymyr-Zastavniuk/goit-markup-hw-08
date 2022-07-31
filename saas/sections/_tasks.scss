@@ -1,9 +1,9 @@
 .tasks {
+  padding-top: 0px;
+
   @include for-phone-and-tablet-only {
     display: none;
   }
-
-  padding-top: 0px;
 
   &__title {
     margin-bottom: 50px;
@@ -11,10 +11,7 @@
 
   &__list {
     display: flex;
-
-    & > li:not(:last-child) {
-      margin-right: 30px;
-    }
+    gap: 30px;
   }
 
   &__item {

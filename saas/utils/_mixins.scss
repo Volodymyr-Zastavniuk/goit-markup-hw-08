@@ -1,7 +1,7 @@
-@mixin w-h($w, $h) {
-  width: #{$w}px;
-  height: #{$h}px;
-}
+// @mixin w-h($w, $h) {
+//   width: #{$w}px;
+//   height: #{$h}px;
+// }
 
 @mixin for-phone-up {
   @media (min-width: 480px) {
@@ -38,6 +38,36 @@
     @content;
   }
 }
+
+@mixin for-pixel-ratio-2 {
+  @media (min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    @content;
+  }
+}
+
+// @mixin for-phone-pixel-ratio-2 {
+//   @media (max-width: 767px) and (min-device-pixel-ratio: 2),
+//     (min-resolution: 192dpi),
+//     (min-resolution: 2dppx) {
+//     @content;
+//   }
+// }
+
+// @mixin for-tablet-pixel-ratio-2 {
+//   @media (min-width: 768px) and (max-width: 1199px) and (mmin-device-pixel-ratio: 2),
+//     (min-resolution: 192dpi),
+//     (min-resolution: 2dppx) {
+//     @content;
+//   }
+// }
+
+// @mixin for-desktop-pixel-ratio-2 {
+//   @media (min-width: 1200px) and (min-device-pixel-ratio: 2),
+//     (min-resolution: 192dpi),
+//     (min-resolution: 2dppx) {
+//     @content;
+//   }
+// }
 
 // @mixin for-tablet-landscape-up {
 //   @media (min-width: 900px) {

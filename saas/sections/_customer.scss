@@ -8,11 +8,9 @@
   }
 
   &__list {
-    margin: -15px;
     display: flex;
-    align-items: center;
-    justify-content: center;
     flex-wrap: wrap;
+    gap: 30px;
 
     text-decoration: none;
     font-style: normal;
@@ -20,15 +18,14 @@
   }
 
   &__item {
-    margin: 15px;
-    flex-basis: calc(100% / 2 - 30px);
+    flex-basis: calc((100% - 30px) / 2);
 
     @include for-tablet-up {
-      flex-basis: calc(100% / 3 - 30px);
+      flex-basis: calc((100% - 2 * 30px) / 3);
     }
 
     @include for-desktop-up {
-      flex-basis: calc(100% / 6 - 30px);
+      flex-basis: calc((100% - 5 * 30px) / 6);
     }
   }
 
@@ -36,7 +33,6 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    // width: 170px;
     height: 92px;
 
     text-decoration: none;
