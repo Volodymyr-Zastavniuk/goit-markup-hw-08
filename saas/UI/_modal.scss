@@ -1,10 +1,10 @@
 .modal {
-  position: absolute;
-
+  margin: 0 auto;
   padding: 40px;
   width: 100%;
   max-width: 450px;
-  overflow: auto;
+  // overflow: auto;
+  transform: scale(1);
   transition: transform var(--transition-duration-function);
 
   background: var(--bg-main-color);
@@ -12,26 +12,11 @@
     0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
 
-  // позиционирование
-  top: 0;
-  left: 0;
-  bottom: 0;
-  transform: scale(1);
-
-  @include for-phone-up {
+  @include for-tablet-up {
+    position: absolute;
     top: 50%;
     left: 50%;
-    bottom: auto;
     transform: translate(-50%, -50%) scale(1);
-  }
-
-  @include for-phone-up {
-    @media (max-height: 630px) {
-      top: 0;
-      bottom: 0;
-      left: 50%;
-      transform: translateX(-50%) scale(1);
-    }
   }
 
   @include for-desktop-up {
@@ -41,14 +26,8 @@
   .backdrop.is-hidden & {
     transform: scale(0.8);
 
-    @include for-phone-up {
+    @include for-tablet-up {
       transform: translate(-50%, -50%) scale(0.8);
-    }
-
-    @include for-phone-up {
-      @media (max-height: 639px) {
-        transform: translateX(-50%) scale(0.8);
-      }
     }
   }
 

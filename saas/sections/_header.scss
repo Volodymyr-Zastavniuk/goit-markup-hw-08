@@ -1,16 +1,3 @@
-//
-// внутри body div.wrapper, если на body overflow hidden,
-// то у меня на телефоне не работает скролл вообще
-//
-// .wrapper {
-//   position: fixed;
-//   width: 100vw;
-//   overflow: hidden;
-//   top: 0;
-//   bottom: 0;
-//   left: 0;
-// }
-
 .header {
   border-bottom: 1px solid var(--header-frame-color);
 
@@ -35,9 +22,11 @@
   }
 
   &__mobile-menu {
-    display: flex;
-    flex-grow: 1;
-    justify-content: space-between;
+    @include for-tablet-up {
+      display: flex;
+      flex-grow: 1;
+      justify-content: space-between;
+    }
 
     @include for-phone-only {
       display: none;
@@ -53,7 +42,6 @@
         bottom: 0;
         left: 0;
         width: 100vw;
-        // height: 100vh;
         overflow-y: scroll;
 
         padding: 48px 40px;
@@ -61,10 +49,23 @@
         letter-spacing: 0.02em;
         background-color: var(--bg-main-color);
       }
+
+      // Для "фиксации" меню
+      &.is-open::after {
+        content: '';
+        position: absolute;
+        left: 0;
+        height: 100vh;
+        width: 100%;
+      }
     }
   }
 
   &__navigation {
+    @include for-phone-only {
+      margin-bottom: auto;
+    }
+
     @include for-tablet-only {
       margin: 0 auto;
     }
@@ -178,6 +179,7 @@
     @include for-tablet-up {
       margin-right: 10px;
       fill: currentColor;
+
       .header__contact:first-child & {
         width: 14px;
         height: 10px;

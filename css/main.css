@@ -87,6 +87,7 @@ body {
 }
 
 .backdrop {
+  padding: 94px 15px;
   position: fixed;
   top: 0;
   left: 0;
@@ -95,6 +96,7 @@ body {
   z-index: 300;
   visibility: visible;
   opacity: 1;
+  overflow: auto;
   background-color: var(--bg-backdrop-color);
   transition: opacity var(--transition-duration-function), visibility var(--transition-duration-function);
 }
@@ -207,34 +209,22 @@ body {
 }
 
 .modal {
-  position: absolute;
+  margin: 0 auto;
   padding: 40px;
   width: 100%;
   max-width: 450px;
-  overflow: auto;
+  transform: scale(1);
   transition: transform var(--transition-duration-function);
   background: var(--bg-main-color);
   box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14), 0px 2px 1px rgba(0, 0, 0, 0.2);
   border-radius: 4px;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  transform: scale(1);
 }
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   .modal {
+    position: absolute;
     top: 50%;
     left: 50%;
-    bottom: auto;
     transform: translate(-50%, -50%) scale(1);
-  }
-}
-@media (min-width: 480px) and (max-height: 630px) {
-  .modal {
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%) scale(1);
   }
 }
 @media (min-width: 1200px) {
@@ -245,14 +235,9 @@ body {
 .backdrop.is-hidden .modal {
   transform: scale(0.8);
 }
-@media (min-width: 480px) {
+@media (min-width: 768px) {
   .backdrop.is-hidden .modal {
     transform: translate(-50%, -50%) scale(0.8);
-  }
-}
-@media (min-width: 480px) and (max-height: 639px) {
-  .backdrop.is-hidden .modal {
-    transform: translateX(-50%) scale(0.8);
   }
 }
 .modal__close-button {
@@ -811,10 +796,12 @@ body {
     margin-right: 93px;
   }
 }
-.header__mobile-menu {
-  display: flex;
-  flex-grow: 1;
-  justify-content: space-between;
+@media (min-width: 768px) {
+  .header__mobile-menu {
+    display: flex;
+    flex-grow: 1;
+    justify-content: space-between;
+  }
 }
 @media (max-width: 767px) {
   .header__mobile-menu {
@@ -835,6 +822,18 @@ body {
     font-weight: 500;
     letter-spacing: 0.02em;
     background-color: var(--bg-main-color);
+  }
+  .header__mobile-menu.is-open::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+  }
+}
+@media (max-width: 767px) {
+  .header__navigation {
+    margin-bottom: auto;
   }
 }
 @media (min-width: 768px) and (max-width: 1199px) {
