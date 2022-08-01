@@ -1,9 +1,14 @@
 .title {
   font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
+  font-size: 28px;
+  line-height: 1.18;
   text-align: center;
   color: var(--title-text-color);
+
+  @include for-desktop-up {
+    font-size: 36px;
+    line-height: 1.16;
+  }
 
   &--middle {
     font-size: 20px;

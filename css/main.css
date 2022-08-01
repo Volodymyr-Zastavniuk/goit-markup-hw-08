@@ -213,6 +213,7 @@ body {
   padding: 40px;
   width: 100%;
   max-width: 450px;
+  overflow: auto;
   transform: scale(1);
   transition: transform var(--transition-duration-function);
   background: var(--bg-main-color);
@@ -222,6 +223,8 @@ body {
 @media (min-width: 768px) {
   .modal {
     position: absolute;
+    height: 100%;
+    max-height: 610px;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%) scale(1);
@@ -230,6 +233,7 @@ body {
 @media (min-width: 1200px) {
   .modal {
     max-width: 528px;
+    max-height: 582px;
   }
 }
 .backdrop.is-hidden .modal {
@@ -579,10 +583,16 @@ body {
 
 .title {
   font-weight: 700;
-  font-size: 36px;
-  line-height: 1.16;
+  font-size: 28px;
+  line-height: 1.18;
   text-align: center;
   color: var(--title-text-color);
+}
+@media (min-width: 1200px) {
+  .title {
+    font-size: 36px;
+    line-height: 1.16;
+  }
 }
 .title--middle {
   font-size: 20px;
@@ -661,6 +671,11 @@ body {
   font-size: 14px;
   line-height: 1.14;
   text-transform: uppercase;
+}
+@media (min-width: 768px) {
+  .features__title {
+    text-align: left;
+  }
 }
 .features__list {
   line-height: 1.71;
