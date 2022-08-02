@@ -151,14 +151,13 @@ body {
   display: flex;
   flex-wrap: wrap;
   row-gap: 15px;
+  -moz-column-gap: 8px;
+       column-gap: 8px;
 }
 @media (min-width: 768px) {
   .filter {
     justify-content: center;
   }
-}
-.filter > li:not(:last-child) {
-  margin-right: 8px;
 }
 .filter__button {
   padding: 6px 22px;
